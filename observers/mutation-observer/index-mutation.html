@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./mutation-observer.js" defer="defer"></script>
+	<title>Mutation Observer</title>
+</head>
+<body>
+	<style>
+		.parent{
+			width: 100%;
+			min-height: 200px;
+			border: 1px dotted black;
+			background-color: lightblue;
+
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		.child {
+			background-color: lightcoral;
+			margin: 3em;
+			flex-grow: 1;
+
+			display: grid;
+			place-items: center;
+		}
+
+
+	</style>
+	<div class="parent hidden">
+		<div class="child" contenteditable>Child 1</div>
+		<div class="child" contenteditable>Child 2</div>
+		<div class="child" contenteditable>Child 3</div> 
+	</div>
+</body>
+</html>
