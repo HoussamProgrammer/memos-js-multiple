@@ -20,8 +20,24 @@ const FileSystemServicePrototype: TFileSystemService = {
 }
 
 // --------------------------------------------------------------------------------------------------
-// 🔹 USE PROTOTYPE ABOVE AS PROTO FOR EACH NEW OBJECT
+// 🔹 ADDITIONAL FUNCTIONS NON PRESENT IN PROTOTYPE SPECIFIC TO THESE INSTANCE
 // --------------------------------------------------------------------------------------------------
-export function FileSystemService() {
-	return Object.create(FileSystemServicePrototype);
+type TFS = {
+	getData(): void;
+};
+
+export type TFSExtended = TFS & TFileSystemService;
+
+export function makeFileSystemService(): TFSExtended {
+	const currentFS: TFS = {
+		getData: function (): void {
+			console.log(`📡 getData() >>>>>`);
+		}
+	}
+
+	// create an instance with FileSystemPrototype as Prototype
+	let instance = Object.create(FileSystemServicePrototype);
+
+	// copy all new methods and private variables to the instance
+	return Object.assign(instance, currentFS);
 }
