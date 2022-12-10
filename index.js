@@ -1,11 +1,4 @@
-import doTagStringTemplateTask from "./es6/tag-template-string.js"
-import { Demo_02_PrototypalInheritance } from "./objects/creation/Demo02_PrototypalInheritance.js";
-import Demo_03_ModulePattern from "./objects/creation/Demo03_ModulePattern.js";
-import crockfordObjectsStyleMain from "./objects/crockford-objects.js";
-import { objectInheritanceMain } from "./objects/objec-inheritance.js";
-import { bubble, Person } from "./objects/object-literal.js";
-import { Bear, Grizzly } from "./objects/object-prototype.js";
-import singletonPrivateMembersMain from "./objects/singeleton-private-variable.js";
+
 
 
 //// tag template string example
@@ -23,7 +16,7 @@ import singletonPrivateMembersMain from "./objects/singeleton-private-variable.j
 // // 	display: [Function: display],
 // // 	move: [Function: move]
 // //   }
- 
+
 // mybubble.z = -10;
 // mybubble.showChildren = function showChildren() {
 // 	console.log('show children');
@@ -76,4 +69,61 @@ import singletonPrivateMembersMain from "./objects/singeleton-private-variable.j
 //crockfordObjectsStyleMain();
 
 //Demo_02_PrototypalInheritance();
-Demo_03_ModulePattern();
+//Demo_03_ModulePattern();
+
+console.log(`🚀 Start()`);
+
+
+
+console.log(`🚀 Start()`);
+
+let personPrototype = {
+	firstName: '',
+	lastName: ''
+};
+
+let employeePrototype = Object.create(personPrototype);
+employeePrototype.hireDate = '';
+employeePrototype.terminateDate = '';
+
+let ben = Object.create(employeePrototype);
+
+// Update Object.prototype
+
+Object.prototype.hasPrototypeOf = function (targetObject, prototype) {
+	console.log(`🚧 hasPrototypeOf() #targetObject: ${JSON.stringify(targetObject)} #prototype: `, prototype);
+	if (Object.getPrototypeOf(targetObject) === null) { return false; }
+
+	if (Object.getPrototypeOf(targetObject) === prototype) {
+		return true;
+	} else {
+		return hasPrototypeOf(Object.getPrototypeOf(targetObject), prototype);
+	}
+}
+
+let result = Object.hasPrototypeOf(ben, Object.getPrototypeOf(personPrototype));
+console.log(`🏁 ${result}`);
+
+
+// console.log(`🚧 #Object.getPrototypeOf: `, Object.getPrototypeOf(ben));
+// console.log(`🚧 #Object.getPrototypeOf: `, Object.getPrototypeOf(Object.getPrototypeOf(ben)));
+// console.log(`🚧 #Object.getPrototypeOf: `, Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(ben))));
+// console.log(`🚧 #Object.getPrototypeOf: `, Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(ben)))));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
