@@ -1,37 +1,40 @@
 // --------------------------------------------------------------------------------------------------
-// 🔹 CREATE A TYPE
+// 🔹 COMMON METHODS FOR ALL INSTANCES IN PROTOTYPE
 // --------------------------------------------------------------------------------------------------
-export type TFileSystemService = {
+type TFileSystemServicePrototype = {
 	loadDirContent(targetPath: string): Fichier[];
-	isDirectory(targetPath: string): boolean
+	isDirectory(targetPath: string): boolean;
 };
 
-// --------------------------------------------------------------------------------------------------
-// 🔹 CREATE A PROTOTYPE THAT USE THE TARGET TYPE AS CONTRACT
-// --------------------------------------------------------------------------------------------------
-const FileSystemServicePrototype: TFileSystemService = {
+const FileSystemServicePrototype: TFileSystemServicePrototype = {
 	loadDirContent: function (targetPath: string): Fichier[] {
-		console.log(`🚧 #loadDirContent() `);
+		console.log(`🚧 #loadDirContent()`);
 		return [];
 	},
 	isDirectory: function (targetPath: string): boolean {
 		return false;
 	}
-}
+};
+
 
 // --------------------------------------------------------------------------------------------------
-// 🔹 ADDITIONAL FUNCTIONS NON PRESENT IN PROTOTYPE SPECIFIC TO THESE INSTANCE
+// 🔸 ADDITIONAL METHODS IN EACH INSTANCE (OUTSIDE OF PROTOTYPE)
 // --------------------------------------------------------------------------------------------------
-type TFS = {
+type TFileSystemServiceExtended = {
+	counter: string;
 	getData(): void;
 };
 
-export type TFSExtended = TFS & TFileSystemService;
+// --------------------------------------------------------------------------------------------------
+// 🔸 COMBINE PROTOTYPE TYPE AND CUSTOM TYPE AS ONE TYPE
+// --------------------------------------------------------------------------------------------------
+export type TFileSystemService = TFileSystemServiceExtended & TFileSystemServicePrototype;
 
-export function makeFileSystemService(): TFSExtended {
-	const currentFS: TFS = {
+export function makeFileSystemService(): TFileSystemService {
+	const currentFS: TFileSystemServiceExtended = {
+		counter: '',
 		getData: function (): void {
-			console.log(`📡 getData() >>>>>`);
+			console.log(`📡 getData() >>>>> #counter: ${this.counter}`);
 		}
 	}
 
