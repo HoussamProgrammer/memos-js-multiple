@@ -55,8 +55,25 @@ class Element {
 	static loadParentShape() { }
 }
 
+class Fichier {
+	nom; 						// variable on each new instance
+	size; 						// variable on each new instance
+
+	static parentFolder;		// variable in Function Constructor -> Fichier.parentFolder = '/home/user';
+	static loadParentFolder 	// function in Function Constructor -> Fichier.loadParentFolder();
+
+	getAttributes();			// function in prototype instance
+	getCreatedAt();				// function in prototype instance
+}
+
+// we can not add a property to an prototype via class not implemented yet.
+// we do it as a old way
+Fichier.prototype.type = 'SymbolicLink';
+
 let elementOne = new Element();
 let elementTwo = new Element();
+
+
 
 
 /* ====================================================================================================== 
