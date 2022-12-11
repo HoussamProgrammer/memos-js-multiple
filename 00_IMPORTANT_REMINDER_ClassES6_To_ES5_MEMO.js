@@ -48,7 +48,7 @@ class Element {
 	}
 
 	// --------------------------------------------------------------------------------------------------
-	// 🚨 ALL METHODS ARE PRESENT IN THE UNIQUE INSTANCE (🖇 PROTOTYPE) NOT THE NEW INSTANCES OF ELEMENT
+	// 🚨 ALL METHODS ARE PRESENT IN THE UNIQUE INSTANCE (⛓ PROTOTYPE) NOT THE NEW INSTANCES OF ELEMENT
 	// --------------------------------------------------------------------------------------------------
 	loadShape() { }
 	getShapeForm() { }
@@ -60,15 +60,40 @@ class Element {
 	static loadParentShape() { }
 }
 
+// we define a shape/definition for all instances with a Function constructor
+// In each new instance
+// 	> if not created an Singleton instance 'InstanceZero' as prototype is created 
+// 	> and affected as reference in prototype property for the new instance
+
+// 🔹FnConstructor 		
+// const element = new FnConstructor():
+// 	|---------------------------> InstanceZero	
+//	|----> obj_01.prototype 	= InstanceZero 
+//	|----> obj_02.prototype 	= InstanceZero 
+//	|----> obj_03.prototype 	= InstanceZero 
+//	|----> . 					= InstanceZero 
+//	|----> obj_N.prototype 		= InstanceZero
+
+// 🔹constructor is a property in prototype
+// 	\---------------------------> InstanceZero.constructor = FnConstructor
+
+// 🔸Prototype chaining
+// 	---> InstanceZero.prototype = Object
+// 			\---> Object.prototype = null;
+// -----------------------------------------------------------------------------------
+
+// 📦 New Instance
+// 🗳 function
+// ⛓ Prototype
 class Fichier {
-	nom; 						// variable on each new instance
-	size; 						// variable on each new instance
+	nom; 						// variable on each new instance 📦
+	size; 						// variable on each new instance 📦
 
-	static parentFolder;		// variable in Function Constructor -> Fichier.parentFolder = '/home/user';
-	static loadParentFolder 	// function in Function Constructor -> Fichier.loadParentFolder();
+	static parentFolder;		// variable in Function Constructor -> Fichier.parentFolder = '/home/user'; 🗳
+	static loadParentFolder 	// function in Function Constructor -> Fichier.loadParentFolder();			🗳
 
-	getAttributes();			// function in prototype instance
-	getCreatedAt();				// function in prototype instance
+	getAttributes();			// function in prototype instance ⛓
+	getCreatedAt();				// function in prototype instance ⛓
 }
 
 // we can not add a property to an prototype via class not implemented yet.
