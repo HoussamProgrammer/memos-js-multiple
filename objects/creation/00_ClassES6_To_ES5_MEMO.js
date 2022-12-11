@@ -43,7 +43,7 @@ class Element {
 	}
 
 	// --------------------------------------------------------------------------------------------------
-	// 🚨 ALL METHOS ARE PRESENT IN THE UNIQUE INSTANCE (🖇 PROTOTYPE) NOT THE NEW INSTANCES OF ELEMENT
+	// 🚨 ALL METHOS ARE PRESENT IN THE UNIQUE INSTANCE (⛓ PROTOTYPE) NOT THE NEW INSTANCES OF ELEMENT
 	// --------------------------------------------------------------------------------------------------
 	loadShape() { }
 	getShapeForm() { }
