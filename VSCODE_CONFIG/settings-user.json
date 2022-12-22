@@ -1,0 +1,87 @@
+{
+	"workbench.startupEditor": "newUntitledFile",
+	"editor.minimap.enabled": false,
+	"editor.fontFamily": "'Source Code Pro Semibold', 'Lucida Console', 'Consolas','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"css.lint.emptyRules": "ignore",
+	"workbench.iconTheme": "material-icon-theme",
+	"extensions.ignoreRecommendations": true,
+	"redhat.telemetry.enabled": false,
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true,
+	},
+	"editor.suggestSelection": "first",
+	"terminal.external.windowsExec": "cmd.exe",
+	"debug.console.fontSize": 13,
+	"git.enableSmartCommit": true,
+	"terminal.explorerKind": "external",
+	"debug.internalConsoleOptions": "openOnSessionStart",
+	"security.workspace.trust.untrustedFiles": "open",
+	"terminal.integrated.fontSize": 13,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"explorer.confirmDelete": false,
+	"editor.linkedEditing": true,
+	"emmet.includeLanguages": {
+		"liquid": "html"
+	},
+	"liveServer.settings.donotShowInfoMsg": true,
+	"liquid.format": true,
+	"liveServer.settings.donotVerifyTags": true,
+	"json.maxItemsComputed": 10000,
+	"window.dialogStyle": "custom",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "~/../assets"
+		}
+	],
+	"liveSassCompile.settings.showOutputWindowOn": "Debug",
+	"window.titleBarStyle": "custom",
+	"liveServer.settings.CustomBrowser": "firefox",
+	"workbench.colorCustomizations": {
+		"editor.background": "#2B2B2B",
+		"editor.foreground": "#a9b7c6",
+	},
+	"editor.tokenColorCustomizations": {
+		"[Darcula]": {
+			"variables": "#a9b7c6",
+			"functions": "#f8c167",
+			"comments": "#808080",
+		},
+		"textMateRules": [
+			{
+				"scope": [
+					"variable.parameter",
+					"support.function",
+					"entity.name.function",
+					"meta.function-call support.function",
+					"meta.function-call entity.name.function",
+				],
+				"settings": {
+					"foreground": "#a9b7c6",
+				}
+			},
+			{
+				"scope": "support.type.property-name.json",
+				"settings": {
+					"foreground": "#a9b7c6",
+					"fontStyle": "bold",
+				}
+			}
+		]
+	},
+	"debug.allowBreakpointsEverywhere": true,
+	"editor.formatOnSave": true,
+	"editor.fontSize": 15,
+	"workbench.tree.indent": 14,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"update.mode": "none",
+	"telemetry.telemetryLevel": "off",
+	"workbench.colorTheme": "Darcula",
+	"git.confirmSync": false,
+}
