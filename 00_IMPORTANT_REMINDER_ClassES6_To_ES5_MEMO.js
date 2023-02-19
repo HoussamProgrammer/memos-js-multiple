@@ -84,16 +84,16 @@ class Element {
 
 // 📦 New Instance
 // 🗳 function
-// ⛓ Prototype
+// 🔗 Prototype
 class Fichier {
-	nom; 						// variable on each new instance 📦
-	size; 						// variable on each new instance 📦
+	nom; 						// 📦 variable on each new instance 
+	size; 						// 📦 variable on each new instance 
 
-	static parentFolder;		// variable in Function Constructor -> Fichier.parentFolder = '/home/user'; 🗳
-	static loadParentFolder 	// function in Function Constructor -> Fichier.loadParentFolder();			🗳
+	static parentFolder;		// 🗳 variable in Function Constructor -> Fichier.parentFolder = '/home/user'; 
+	static loadParentFolder 	// 🗳 function in Function Constructor -> Fichier.loadParentFolder();		
 
-	getAttributes();			// function in prototype instance ⛓
-	getCreatedAt();				// function in prototype instance ⛓
+	getAttributes();			// 🔗 function in prototype instance 
+	getCreatedAt();				// 🔗 function in prototype instance 
 }
 
 // we can not add a property to an prototype via class not implemented yet.

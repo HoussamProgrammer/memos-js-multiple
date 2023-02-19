@@ -74,9 +74,6 @@
 console.log(`🚀 Start()`);
 
 
-
-console.log(`🚀 Start()`);
-
 let personPrototype = {
 	firstName: '',
 	lastName: ''
