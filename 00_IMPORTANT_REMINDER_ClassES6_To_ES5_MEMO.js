@@ -74,20 +74,17 @@ class Element {
 //	|----> . 					= InstanceZero 
 //	|----> obj_N.prototype 		= InstanceZero
 
-// 🔹constructor is a property in prototype
-// 	\---------------------------> InstanceZero.constructor = FnConstructor
+// 🔹constructor is a property in prototype >> InstanceZero.constructor = FnConstructor
 
 // 🔸Prototype chaining
-// 	---> InstanceZero.prototype = Object
-// 			\---> Object.prototype = null;
-// -----------------------------------------------------------------------------------
+// 	obj_01.prototype = InstanceZero >> InstanceZero.prototype = Object >>> Object.prototype = null;
 
 // 📦 New Instance
 // 🗳 function
 // 🔗 Prototype
 class Fichier {
-	nom; 						// 📦 variable on each new instance 
-	size; 						// 📦 variable on each new instance 
+	nom; 						// 📦 variable in each New instance 
+	size; 						// 📦 variable in each New instance 
 
 	static parentFolder;		// 🗳 variable in Function Constructor -> Fichier.parentFolder = '/home/user'; 
 	static loadParentFolder 	// 🗳 function in Function Constructor -> Fichier.loadParentFolder();		
@@ -95,7 +92,6 @@ class Fichier {
 	getAttributes();			// 🔗 function in prototype instance 
 	getCreatedAt();				// 🔗 function in prototype instance 
 }
-
 // we can not add a property to an prototype via class not implemented yet.
 // we do it as a old way
 Fichier.prototype.type = 'SymbolicLink';
